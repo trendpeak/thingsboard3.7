@@ -21,8 +21,10 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import org.thingsboard.common.util.JacksonUtil;
 
-import jakarta.annotation.PostConstruct;
+import java.io.InputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import javax.annotation.PostConstruct;
 
 @Service
 @Slf4j
@@ -31,10 +33,19 @@ public class DefaultTbMailConfigTemplateService implements TbMailConfigTemplateS
     private JsonNode mailConfigTemplates;
 
     @PostConstruct
-    private void postConstruct() throws IOException {
-        mailConfigTemplates = JacksonUtil.toJsonNode(new ClassPathResource("/templates/mail_config_templates.json").getFile());
+public void postConstruct() {
+    try (InputStream inputStream = getClass().getResourceAsStream("/templates/mail_config_templates.json")) {
+        if (inputStream == null) {
+            throw new FileNotFoundException("Resource not found: /templates/mail_config_templates.json");
+        }
+        // Load and process the JSON file
+        // Example: Read the input stream into a string
+        String jsonContent = new String(inputStream.readAllBytes());
+        // Process the JSON content
+    } catch (IOException e) {
+        throw new RuntimeException("Failed to load mail configuration templates", e);
     }
-
+ }
     @Override
     public JsonNode findAllMailConfigTemplates() {
         return mailConfigTemplates;
