@@ -619,12 +619,6 @@ export const NotificationTemplateTypeTranslateMap = new Map<NotificationType, No
       helpId: 'notification/api_usage_limit'
     }
   ],
-  [NotificationType.NEW_PLATFORM_VERSION,
-    {
-      name: 'notification.template-type.new-platform-version',
-      helpId: 'notification/new_platform_version'
-    }
-  ],
   [NotificationType.RULE_NODE,
     {
       name: 'notification.template-type.rule-node',
