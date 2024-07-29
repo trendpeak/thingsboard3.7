@@ -147,10 +147,10 @@
                     <div class="tb-form-panel stroked">
                       <div class="tb-form-panel-title" translate>device.connectivity.install-necessary-client-tools</div>
                       <div class="tb-install-instruction-text">
-                        <ng-container *ngTemplateOutlet="seeDocumentation; context:
+                        <!-- <ng-container *ngTemplateOutlet="seeDocumentation; context:
                         {doc: {text: 'device.connectivity.install-mqtt-windows',
                         href: 'https://thingsboard.io/docs/reference/mqtt-api/?connectdevice=mqtt-windows#mqtt-connect'}}">
-                        </ng-container>
+                        </ng-container> -->
                       </div>
                     </div>
                     <ng-container
@@ -211,12 +211,12 @@
                 </ng-template>
                 <ng-template matTabContent>
                   <div class="tb-form-panel no-padding no-border tb-tab-body">
-                    <ng-container
+                    <!-- <ng-container
                       *ngTemplateOutlet="executeCommand; context: {cmd: {
                               noSecLabel: 'MQTT', noSec: commands.mqtt.docker.mqtt,
                               secLabel: 'MQTTs', sec: commands.mqtt.docker.mqtts,
                               doc: {text: 'device.connectivity.mqtts-x509-command', href: 'https://thingsboard.io/docs/user-guide/mqtt-over-ssl/'}}}">
-                    </ng-container>
+                    </ng-container> -->
                   </div>
                 </ng-template>
               </mat-tab>
@@ -236,10 +236,10 @@
                   <div class="tb-form-panel stroked" *ngIf="commands.coap.coaps !== 'Check documentation'">
                     <div class="tb-form-panel-title" translate>device.connectivity.install-necessary-client-tools</div>
                     <div class="tb-install-instruction-text">
-                      <ng-container *ngTemplateOutlet="seeDocumentation; context:
+                      <!-- <ng-container *ngTemplateOutlet="seeDocumentation; context:
                         {doc: {text: 'device.connectivity.install-coap-client',
                         href: 'https://thingsboard.io/docs/user-guide/ssl/coap-access-token/'}}">
-                      </ng-container>
+                      </ng-container> -->
                     </div>
                   </div>
                   <ng-container
@@ -258,12 +258,12 @@
               </ng-template>
               <ng-template matTabContent>
                 <div class="tb-form-panel no-padding no-border tb-tab-body">
-                  <ng-container
+                  <!-- <ng-container
                     *ngTemplateOutlet="executeCommand; context: {cmd: {
                               noSecLabel: 'CoAP', noSec: commands.coap.docker.coap,
                               secLabel: 'CoAPs', sec: commands.coap.docker.coaps,
                               doc: {text: 'device.connectivity.coaps-x509-command', href: 'https://thingsboard.io/docs/user-guide/ssl/coap-x509-certificates/'}}}">
-                  </ng-container>
+                  </ng-container> -->
                 </div>
               </ng-template>
             </mat-tab>
